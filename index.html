@@ -22,6 +22,16 @@
 .support-button:focus-visible{outline:3px solid rgba(11,111,211,.28);outline-offset:3px}
 </style>
 
+
+<style>
+.download-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.15rem 0 .65rem}
+.download-button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.05rem;border-radius:10px;background:#0b6fd3;color:#fff;text-decoration:none;font-weight:700;line-height:1.2}
+.download-button:hover{filter:brightness(.95);transform:translateY(-1px)}
+.download-button:focus-visible{outline:3px solid rgba(11,111,211,.28);outline-offset:3px}
+.download-note{font-size:.92rem;opacity:.75;margin-top:.25rem}
+@media(max-width:640px){.download-actions{flex-direction:column}.download-button{width:100%}}
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -112,7 +122,14 @@
 
 <section class="resources section" id="resources"><div class="wrap"><div class="section-heading"><p class="eyebrow">Useful links</p><h2>Check current information at the source.</h2><p>Retirement rules and figures change. These Australian resources can help you check current information independently.</p></div><div class="resource-links"><a href="https://moneysmart.gov.au/" target="_blank" rel="noopener">Moneysmart <span>↗</span></a><a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families" target="_blank" rel="noopener">Australian Taxation Office <span>↗</span></a><a href="https://www.servicesaustralia.gov.au/age-pension" target="_blank" rel="noopener">Services Australia — Age Pension <span>↗</span></a><a href="https://www.superannuation.asn.au/consumers/retirement-standard/" target="_blank" rel="noopener">ASFA Retirement Standard <span>↗</span></a><a href="https://www.superguide.com.au/" target="_blank" rel="noopener">SuperGuide <span>↗</span></a></div><p class="fine">External links are provided for convenience and information. Sunnora is not affiliated with or endorsed by the organisations listed above.</p></div></section>
 
-<section class="download wrap" id="download"><p class="eyebrow">Download</p><h2>Sunnora 4.8</h2><p>Sunnora is free to download and runs locally. Public installer links will be added here once the release packages and website are ready.</p><button class="button disabled" disabled>Download links coming soon</button><p class="fine">No account required · No subscription</p></section>
+<section class="download wrap" id="download"><p class="eyebrow">Download</p><h2>Sunnora 4.8</h2><p>Sunnora is free to download and runs locally. Public installer links will be added here once the release packages and website are ready.</p>
+<div class="download-actions" aria-label="Sunnora downloads">
+  <a class="download-button" href="https://github.com/hesitantfool/FamilyPlanner/releases/download/latest/Sunnora.Retirement.Planner.Setup.exe">Download for Windows</a>
+  <a class="download-button" href="https://github.com/hesitantfool/FamilyPlanner/releases/download/latest/Sunnora.Retirement.Planner.dmg">Download for macOS</a>
+  <a class="download-button" href="https://github.com/hesitantfool/FamilyPlanner/releases/download/latest/sunnora-retirement-planner_4.8_all.deb">Download for Linux</a>
+</div>
+<p class="download-note">Sunnora 4.8 · Free download · No subscription</p>
+<p class="fine">No account required · No subscription</p></section>
 
 <section class="important wrap" id="important"><h2>Important information</h2><p>Sunnora is a retirement modelling and educational tool, not financial advice. Results are estimates based on the information and assumptions you enter and are not predictions or guarantees. Sunnora does not recommend financial products or tell you what financial decisions to make. Consider your own circumstances and, where appropriate, seek professional financial, taxation or legal advice.</p></section>
 </main>

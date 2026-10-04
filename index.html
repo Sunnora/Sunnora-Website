@@ -32,6 +32,84 @@
 @media(max-width:640px){.download-actions{flex-direction:column}.download-button{width:100%}}
 </style>
 
+
+<style>
+.download-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.download-heading h2 {
+  margin-bottom: .45rem;
+}
+
+.download-heading p {
+  margin: 0;
+}
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 1000px;
+  margin: 0 auto 1.25rem;
+}
+
+.download-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border: 1px solid #dbe5ef;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.download-card h3 {
+  margin: 0 0 .35rem;
+}
+
+.download-card > p {
+  margin: 0 0 1rem;
+}
+
+.download-card .download-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mac-note {
+  margin: .75rem 0 0 !important;
+  font-size: .84rem;
+}
+
+.mac-footnote {
+  max-width: 800px;
+  margin: 1rem auto .6rem;
+  text-align: center;
+  font-size: .84rem;
+  opacity: .78;
+}
+
+.download-summary {
+  text-align: center;
+  margin: .8rem 0 0;
+  font-size: .94rem;
+  opacity: .8;
+}
+
+@media (max-width: 760px) {
+  .download-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .download-card {
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -122,14 +200,53 @@
 
 <section class="resources section" id="resources"><div class="wrap"><div class="section-heading"><p class="eyebrow">Useful links</p><h2>Check current information at the source.</h2><p>Retirement rules and figures change. These Australian resources can help you check current information independently.</p></div><div class="resource-links"><a href="https://moneysmart.gov.au/" target="_blank" rel="noopener">Moneysmart <span>↗</span></a><a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families" target="_blank" rel="noopener">Australian Taxation Office <span>↗</span></a><a href="https://www.servicesaustralia.gov.au/age-pension" target="_blank" rel="noopener">Services Australia — Age Pension <span>↗</span></a><a href="https://www.superannuation.asn.au/consumers/retirement-standard/" target="_blank" rel="noopener">ASFA Retirement Standard <span>↗</span></a><a href="https://www.superguide.com.au/" target="_blank" rel="noopener">SuperGuide <span>↗</span></a></div><p class="fine">External links are provided for convenience and information. Sunnora is not affiliated with or endorsed by the organisations listed above.</p></div></section>
 
-<section class="download wrap" id="download"><p class="eyebrow">Download</p><h2>Sunnora 4.8</h2><p>Sunnora is free to download and runs locally. Public installer links will be added here once the release packages and website are ready.</p>
-<div class="download-actions" aria-label="Sunnora downloads">
-  <a class="download-button" href="https://github.com/hesitantfool/FamilyPlanner/releases/download/latest/Sunnora.Retirement.Planner.Setup.exe">Download for Windows</a>
-  <a class="download-button" href="https://github.com/hesitantfool/FamilyPlanner/releases/download/latest/Sunnora.Retirement.Planner.dmg">Download for macOS</a>
-  <a class="download-button" href="https://github.com/hesitantfool/FamilyPlanner/releases/download/latest/sunnora-retirement-planner_4.8_all.deb">Download for Linux</a>
-</div>
-<p class="download-note">Sunnora 4.8 · Free download · No subscription</p>
-<p class="fine">No account required · No subscription</p></section>
+<section class="download wrap" id="download">
+  <div class="download-heading">
+    <h2>Sunnora 4.8</h2>
+    <p>Free to download and runs locally on your computer.</p>
+  </div>
+
+  <div class="download-grid">
+
+    <div class="download-card">
+      <h3>Windows</h3>
+      <p>Windows installer</p>
+      <a class="download-button"
+         href="https://github.com/hesitantfool/FamilyPlanner/releases/download/latest/Sunnora.Retirement.Planner.Setup.exe">
+        Download for Windows
+      </a>
+    </div>
+
+    <div class="download-card">
+      <h3>macOS</h3>
+      <p>macOS installer</p>
+      <a class="download-button"
+         href="https://github.com/hesitantfool/FamilyPlanner/releases/download/latest/Sunnora.Retirement.Planner.dmg">
+        Download for macOS
+      </a>
+      <p class="mac-note"><strong>Not yet user-tested.</strong><sup>1</sup></p>
+    </div>
+
+    <div class="download-card">
+      <h3>Linux</h3>
+      <p>Debian package</p>
+      <a class="download-button"
+         href="https://github.com/hesitantfool/FamilyPlanner/releases/download/latest/sunnora-retirement-planner_4.8_all.deb">
+        Download for Linux
+      </a>
+    </div>
+
+  </div>
+
+  <p class="mac-footnote">
+    <sup>1</sup> The macOS build has passed automated build and validation checks,
+    but has not yet been tested on a physical Mac.
+  </p>
+
+  <p class="download-summary">
+    No account required · Free download · No subscription
+  </p>
+</section>
 
 <section class="important wrap" id="important"><h2>Important information</h2><p>Sunnora is a retirement modelling and educational tool, not financial advice. Results are estimates based on the information and assumptions you enter and are not predictions or guarantees. Sunnora does not recommend financial products or tell you what financial decisions to make. Consider your own circumstances and, where appropriate, seek professional financial, taxation or legal advice.</p></section>
 </main>

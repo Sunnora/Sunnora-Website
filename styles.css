@@ -38,3 +38,8 @@ footer{background:#f0f5fb;border-top-color:#dce6f2}
 .compact-shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 38px rgba(17,54,96,.09)}
 @media(max-width:900px){.budget-example{grid-template-columns:1fr}.compact-shot{justify-self:start;width:min(100%,680px)}}
 @media(max-width:600px){.budget-example{padding-top:58px;padding-bottom:58px}.compact-shot img{border-radius:12px}}
+
+/* Contact within the About section. */
+.about-contact h3{color:var(--ink);margin:24px 0 8px}
+.about-contact a{color:var(--blue);text-underline-offset:3px}
+.about-contact a:hover{color:var(--ink)}

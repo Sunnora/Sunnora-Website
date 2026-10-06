@@ -126,11 +126,19 @@
   <div class="hero-copy">
     <p class="eyebrow">Australian retirement planning</p>
     <h1>See how your retirement fits together.</h1>
+    <div class="hero-summary">
     <p class="lead">Sunnora is a free retirement planner for exploring super, retirement income, spending, Age Pension, mortgage and other income sources over time. Sunnora can also include UK State Pension income alongside super and other pension income in the retirement projection.</p>
     <div class="actions"><a class="button" href="#download">Download Sunnora</a><a class="text-link" href="#features">See what it does ↓</a></div>
     <p class="facts">Free to download <span>·</span> Runs locally <span>·</span> No subscription</p>
+    </div>
   </div>
-  <figure class="hero-shot"><img src="assets/dashboard-blue.png" alt="Sunnora Dashboard showing account balance projections and live What if controls"></figure>
+  <figure class="dashboard-overview">
+    <a class="dashboard-enlarge" href="assets/dashboard-overview.png" aria-label="Enlarge Sunnora dashboard overview" aria-haspopup="dialog" aria-controls="dashboard-lightbox">
+      <img src="assets/dashboard-overview.png" width="6144" height="3352" fetchpriority="high" alt="Sunnora dashboard with household account balance projections, retirement income and spending, retirement timing and live What if controls">
+      <span class="enlarge-hint" aria-hidden="true">⤢ Enlarge dashboard</span>
+    </a>
+    <figcaption>Your retirement plan at a glance. Select the dashboard to explore the details.</figcaption>
+  </figure>
 </section>
 
 <section class="trust-strip">
@@ -145,11 +153,6 @@
     <article><span class="num">03</span><h3>Partner planning</h3><p>Include a linked partner profile in the household forecast.</p></article>
     <article><span class="num">04</span><h3>Mortgage & debt</h3><p>Include mortgage and debt information alongside the retirement projection.</p></article>
   </div>
-</section>
-
-<section class="showcase wrap">
-  <div class="copy"><p class="eyebrow">Your projection</p><h2>See balances across the plan.</h2><p>Follow projected account balances through working years and retirement, with retirement timing and household accounts shown together.</p><p class="muted">The Dashboard also keeps live What if controls alongside the projection so selected assumptions can be explored without immediately changing the saved plan.</p></div>
-  <figure><img src="assets/dashboard-blue.png" alt="Account balances projection in Sunnora"></figure>
 </section>
 
 <section class="showcase reverse wrap">
@@ -261,5 +264,40 @@
 </main>
 
 <footer><div class="wrap footer-grid"><div class="brand footer-brand"><span class="sun">☀</span><span><b>Sunnora</b><small>RETIREMENT PLANNING</small></span></div><p>Free Australian retirement planning software.</p><p class="fine">© 2026 Sunnora · sunnora.au</p></div></footer>
+<dialog id="dashboard-lightbox" class="dashboard-lightbox" aria-label="Enlarged Sunnora dashboard overview">
+  <button class="lightbox-close" type="button" aria-label="Close dashboard overview" autofocus>×</button>
+  <img src="assets/dashboard-overview.png" width="6144" height="3352" alt="Full-size Sunnora dashboard overview">
+</dialog>
+<script>
+(() => {
+  const trigger = document.querySelector('.dashboard-enlarge');
+  const lightbox = document.getElementById('dashboard-lightbox');
+  if (!lightbox || typeof lightbox.showModal !== 'function') return;
+  let previousOverflow;
+  trigger.addEventListener('click', event => {
+    event.preventDefault();
+    previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    lightbox.showModal();
+  });
+  lightbox.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
+  lightbox.addEventListener('keydown', event => {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      lightbox.querySelector('.lightbox-close').focus();
+    }
+  });
+  lightbox.addEventListener('click', event => {
+    if (event.target !== lightbox) return;
+    const bounds = lightbox.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right ||
+        event.clientY < bounds.top || event.clientY > bounds.bottom) lightbox.close();
+  });
+  lightbox.addEventListener('close', () => {
+    document.body.style.overflow = previousOverflow;
+    trigger.focus({ preventScroll: true });
+  });
+})();
+</script>
 </body>
 </html>

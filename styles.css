@@ -35,6 +35,7 @@ footer{background:#f0f5fb;border-top-color:#dce6f2}
 .budget-example{display:grid;grid-template-columns:minmax(250px,.82fr) minmax(420px,1.18fr);gap:clamp(28px,4vw,58px);align-items:center;padding-top:76px;padding-bottom:76px}
 .budget-example .section-copy{max-width:430px}
 .compact-shot{justify-self:end;width:min(100%,620px);margin:0}
+#budget .compact-shot{width:min(100%,540px)}
 .compact-shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 38px rgba(17,54,96,.09)}
 @media(max-width:900px){.budget-example{grid-template-columns:1fr}.compact-shot{justify-self:start;width:min(100%,680px)}}
 @media(max-width:600px){.budget-example{padding-top:58px;padding-bottom:58px}.compact-shot img{border-radius:12px}}
